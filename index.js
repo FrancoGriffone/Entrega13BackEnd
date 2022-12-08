@@ -179,14 +179,16 @@ app.get("/api/randoms", (req, res)=>{
     forked.on("message", (suma)=>{
         res.send({suma})
     })
-	/*const random = req.query.cant || 100000000
-    forked.send(random)
-    forked.on('message', (msg) => {res.end(msg)})*/
 })
 //info
+
+//const numCpu = require("os").cpus(length); //FIXME:
+
 app.get("/info", (req, res) => {
+
 	const info = [
-	  {
+	  {	
+		//cpus: numCpu,
 		pid: process.pid,
 		version: process.version,
 		id: process.id,
